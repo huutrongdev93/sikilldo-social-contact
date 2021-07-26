@@ -1,8 +1,8 @@
 <div class="scb-phone-box social-<?php echo social_contact_button::config('phone.pc-position');?> social-mb-<?php echo social_contact_button::config('phone.mb-position');?>">
-    <a href="tel:<?php echo $config['phone'];?>" rel="nofollow" class="btn-call">
+    <a href="tel:<?php echo $config['style2_phone'];?>" rel="nofollow" class="btn-call">
         <div class="btn-call__ico"><i class="fas fa-phone-alt"></i></div>
     </a>
-    <div class="btn-call__number"><a href="tel:<?php echo $config['phone'];?>" rel="nofollow"><?php echo $config['phone'];?></a></div>
+    <div class="btn-call__number"><a href="tel:<?php echo $config['phone'];?>" rel="nofollow"><?php echo $config['style2_phone'];?></a></div>
 </div>
 
 <style>
