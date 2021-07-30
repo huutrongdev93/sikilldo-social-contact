@@ -32,7 +32,7 @@ class scb_phone_style2 {
         $theme  = InputBuilder::Post('theme');
         $config = [];
         $config['style2_phone']             = $theme['style2_phone'];
-        $config['style2_phone']             = (String)Str::of($config['phone'])->replace(' ', '')->replace('.', '')->replace('+84', '0');
+        $config['style2_phone']             = (String)Str::of($config['style2_phone'])->replace(' ', '')->replace('.', '')->replace('+84', '0');
         $config['style2_btn_bg_color']      = $theme['style2_btn_bg_color'];
         $config['style2_btn_border_color']  = $theme['style2_btn_border_color'];
         $config['style2_btn_txt_color']     = $theme['style2_btn_txt_color'];
