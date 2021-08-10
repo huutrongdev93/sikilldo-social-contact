@@ -5,7 +5,7 @@ Plugin class    : social_contact_button
 Plugin uri      : https://sikido.vn
 Description     : Pop-up được xem là hình thức quảng cáo phổ biến với chi phí thấp đem lại nhiều hiệu quả. Bên cạnh đó, có thể xem pop-up như một call-to-action (nút kêu gọi hành động) mạnh mẽ.
 Author          : SKDSoftware Dev Team
-Version         : 1.1.0
+Version         : 1.1.1
  */
 define( 'SCB_NAME', 'social-contact-button' );
 
