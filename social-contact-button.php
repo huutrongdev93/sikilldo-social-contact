@@ -76,11 +76,11 @@ class social_contact_button {
             ],
             'phone' => [
                 'pc-show' => 1,
-                'pc-postion' => 'bottomLeft',
+                'pc-position' => 'bottomLeft',
                 'pc-vertical' => '100',
                 'pc-horizontal' => '10',
                 'mb-show' => 1,
-                'mb-postion' => 'bottomLeft',
+                'mb-position' => 'bottomLeft',
                 'mb-vertical' => '100',
                 'mb-horizontal' => '10',
             ],
