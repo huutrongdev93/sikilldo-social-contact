@@ -29,7 +29,7 @@ $module::render();
         position: fixed; display: var(--social-pc-display); z-index: 999999;
     }
     .social-contact-box ul {
-        list-style:none; margin-bottom: 0;
+        list-style:none; margin-bottom: 0; padding:0;
     }
     .social-contact-item a img {
         width: 30px;

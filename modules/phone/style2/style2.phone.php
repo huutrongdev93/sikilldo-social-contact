@@ -29,7 +29,7 @@ class scb_phone_style2 {
         return $config;
     }
     static public function admin_config_save($result) {
-        $theme  = InputBuilder::Post('theme');
+        $theme  = Request::Post('theme');
         $config = [];
         $config['style2_phone']             = $theme['style2_phone'];
         $config['style2_phone']             = (String)Str::of($config['style2_phone'])->replace(' ', '')->replace('.', '')->replace('+84', '0');

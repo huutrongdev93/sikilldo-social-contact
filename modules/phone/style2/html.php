@@ -47,16 +47,14 @@
     .scb-phone-box .btn-call__number {
         position: absolute;
         height: 50px; line-height: 50px;
-        left:30px; top:5px;
         background: var(--btn-txt-color);
         border: 2px solid var(--btn-bg-color);
         box-shadow: 0 8px 10px rgba(56, 163, 253, 0.3);
         color:var(--btn-txt-color);
-        border-radius: 0 20px 20px 0;
         font-size: 20px; font-weight: bold;
         z-index: 1;
         transition: all 0.5s;
-        width: 200px; padding-left: 50px;
+        width: 200px;
         overflow: hidden;
     }
     .scb-phone-box .btn-call__number a {
@@ -74,6 +72,13 @@
     .scb-phone-box:hover .btn-call__number a{
         color:var(--btn-bg-color);
     }
+    .scb-phone-box.social-bottomLeft .btn-call__number, .scb-phone-box.social-topLeft .btn-call__number {
+        left:30px; top:5px; padding-left: 50px; border-radius: 0 20px 20px 0; text-align: left;
+    }
+    .scb-phone-box.social-bottomRight .btn-call__number, .scb-phone-box.social-topRight .btn-call__number {
+        right:30px; top:5px; padding-right: 50px; border-radius: 20px 0 0 20px; text-align: right;
+    }
+
     @-webkit-keyframes hoverWave {
         0% {
             box-shadow: 0 8px 10px var(--btn-border-color), 0 0 0 0 var(--btn-border-color), 0 0 0 0 var(--btn-border-color)

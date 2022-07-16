@@ -1,7 +1,7 @@
 <?php
 if(have_posts($tabs)) {
     reset($tabs);
-    $section = (InputBuilder::get('section')) ? InputBuilder::get('section') : key($tabs);
+    $section = (Request::get('section')) ? Request::get('section') : key($tabs);
     ?>
     <form id="popup_main_form" method="post">
         <div class="action-bar">

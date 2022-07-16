@@ -31,7 +31,7 @@ class scb_socialcontact_style2 {
         return $config;
     }
     static public function admin_config_save($result) {
-        $theme  = InputBuilder::Post('theme');
+        $theme  = Request::Post('theme');
         $config = static::config();
         $config['button']               = $theme['button'];
         $config['facebook_message_id']  = $theme['facebook_message_id'];

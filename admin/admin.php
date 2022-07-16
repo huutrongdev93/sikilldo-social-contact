@@ -13,12 +13,12 @@ Class Social_Contact_Admin {
     static public function save( $ci, $model ) {
         $result['status']  = 'error';
         $result['message'] = __('Lưu dữ liệu không thành công');
-        if( InputBuilder::post() ) {
-            $module = trim(InputBuilder::post('key'));
+        if( Request::post() ) {
+            $module = trim(Request::post('key'));
             if($module == 'general') {
                 $config  = Option::get('social_contact_button_config');
-                $active  = InputBuilder::post('active');
-                $show    = InputBuilder::post('show');
+                $active  = Request::post('active');
+                $show    = Request::post('show');
                 $config['show'] = (!empty($show)) ? $show : [];
                 $config['active'] = (!empty($active)) ? $active : [];
                 Option::update('social_contact_button_config', $config);

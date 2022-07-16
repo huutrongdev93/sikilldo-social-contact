@@ -15,14 +15,14 @@ class scb_phone {
     }
 
     public static function admin_config_save($result) {
-        $object_key = trim(InputBuilder::post('style'));
+        $object_key = trim(Request::post('style'));
         if(empty($object_key)) {
             $result['message'] = 'Bạn chưa chọn mẫu nào';
             return $result;
         }
 
         if(method_exists($object_key, 'admin_config_save')) {
-            $phone = InputBuilder::post('phone');
+            $phone = Request::post('phone');
             $config = Option::get('social_contact_button_config');
             $config['phone'] = $phone;
             $config['phone']['pc-show'] = (int)$config['phone']['pc-show'];

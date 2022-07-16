@@ -16,13 +16,13 @@ class scb_socialcontact {
     }
 
     static public function admin_config_save($result) {
-        $object_key = trim(InputBuilder::post('style'));
+        $object_key = trim(Request::post('style'));
         if(empty($object_key)) {
             $result['message'] = 'Bạn chưa chọn mẫu nào';
             return $result;
         }
         if(method_exists($object_key, 'admin_config_save')) {
-            $socialcontact = InputBuilder::post('socialcontact');
+            $socialcontact = Request::post('socialcontact');
             $config = Option::get('social_contact_button_config');
             $config['socialcontact'] = $socialcontact;
             $config['socialcontact']['pc-show'] = (int)$config['socialcontact']['pc-show'];
