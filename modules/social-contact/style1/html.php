@@ -1,30 +1,63 @@
-<?php
-$module = 'scb_'.$module;
-$module::render();
-?>
+<div class="animated fadeInUp social-contact-box social-contact-style1 social-<?php echo SocialContact::config('pc-position');?> social-mb-<?php echo SocialContact::config('mb-position');?>" xmlns:https="http://www.w3.org/1999/xhtml">
+    <ul>
+        <?php foreach ($buttons as $btnKey => $btn) { ?>
+            <li class="social-contact-item <?php echo $btn['class'];?>">
+                <a class="social-contact-link" href="<?php echo (!isset($btn['onclick'])) ? $btn['url'] : '#';?>"
+                    <?php echo (isset($btn['onclick'])) ? 'onclick="'.$btn['onclick'].'"' : '';?>
+                    <?php echo (isset($btn['target'])) ? 'target="'.$btn['target'].'"' : '';?>><?php echo $btn['icon'];?>
+                </a>
+            </li>
+        <?php } ?>
+        <?php foreach ($config['extend'] as $btnKey => $btn) { ?>
+        <li class="social-contact-item">
+            <a href="<?php echo $btn['url'];?>" class="social-contact-link" target="_blank" style="--color:<?php echo $btn['color'];?>">
+                <?php echo Template::img($btn['icon']);?>
+            </a>
+        </li>
+        <?php } ?>
+    </ul>
+</div>
 <style>
-    :root {
-        --social-pc-vertical:<?php echo $config['socialcontact']['pc-vertical'];?>px;
-        --social-pc-horizontal:<?php echo $config['socialcontact']['pc-horizontal'];?>px;
-        --social-mb-vertical:<?php echo $config['socialcontact']['mb-vertical'];?>px;
-        --social-mb-horizontal:<?php echo $config['socialcontact']['mb-horizontal'];?>px;
-        --social-pc-display:<?php echo ($config['socialcontact']['pc-show'] == 0) ? 'none' : 'block';?>;
-        --social-mb-display:<?php echo ($config['socialcontact']['mb-show'] == 0) ? 'none' : 'block';?>;
-
-        --fb-fp:#0674E8;
-        --fb-ms:#0080F7;
-        --fb-share:#0080F7;
-        --twitter-page:#41B6E4;
-        --twitter-share:#41B6E4;
-        --yt-page:#D92E2E;
-        --ins-page:#AA168B;
-        --pinterest-page:#B7081B;
-        --email-page:#1B9AC3;
-        --skype-page:#14A7DE;
-        --phone-page:#2CBB00;
-        --sms-page:#F0C823;
-        --zalo-page:#0088FF;
+    .social-contact-style1 .social-contact-item {
+        display: inline-block;
     }
+    .social-contact-style1 .social-contact-item a {
+        display: block; width: 50px; height: 50px; line-height: 50px; text-align: center; font-size: 20px;
+        border-radius: 50%; overflow: hidden;
+        background-color: var(--color, #fff); color:#000;box-shadow: 0 2px 5px 0 rgba(0,0,0,.16), 0 2px 10px 0 rgba(0,0,0,.12);
+        transition: all 0.3s;
+    }
+    .social-contact-style1 .social-contact-item a img {
+        width: 30px;filter: brightness(0) invert(1);
+    }
+    .social-contact-style1 .social-contact-item a:hover {
+        background-color: #fff;
+    }
+    .social-contact-style1 .social-contact-item a:hover img {
+        width: 30px;filter: brightness(1) invert(0);
+    }
+     :root {
+         --social-pc-vertical:<?php echo SocialContact::config('pc-vertical');?>px;
+         --social-pc-horizontal:<?php echo SocialContact::config('pc-horizontal');?>px;
+         --social-mb-vertical:<?php echo SocialContact::config('mb-vertical');?>px;
+         --social-mb-horizontal:<?php echo SocialContact::config('mb-horizontal');?>px;
+         --social-pc-display:<?php echo (SocialContact::config('pc-show') == 0) ? 'none' : 'block';?>;
+         --social-mb-display:<?php echo (SocialContact::config('mb-show') == 0) ? 'none' : 'block';?>;
+
+         --fb-fp:#0674E8;
+         --fb-ms:#0080F7;
+         --fb-share:#0080F7;
+         --twitter-page:#41B6E4;
+         --twitter-share:#41B6E4;
+         --yt-page:#D92E2E;
+         --ins-page:#AA168B;
+         --pinterest-page:#B7081B;
+         --email-page:#1B9AC3;
+         --skype-page:#14A7DE;
+         --phone-page:#2CBB00;
+         --sms-page:#F0C823;
+         --zalo-page:#0088FF;
+     }
     .social-contact-box {
         position: fixed; display: var(--social-pc-display); z-index: 999999;
     }

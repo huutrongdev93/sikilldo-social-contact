@@ -1,15 +1,15 @@
-<div class="scb-phone-box social-<?php echo social_contact_button::config('phone.pc-position');?> social-mb-<?php echo social_contact_button::config('phone.mb-position');?>">
-    <a href="tel:<?php echo $config['style2_phone'];?>" rel="nofollow" class="btn-call">
+<div class="scb-phone-box social-<?php echo PhoneContact::config('pc-position');?> social-mb-<?php echo PhoneContact::config('mb-position');?>">
+    <a href="tel:<?php echo Option::get('contact_phone');?>" rel="nofollow" class="btn-call">
         <div class="btn-call__ico"><i class="fas fa-phone-alt"></i></div>
     </a>
-    <div class="btn-call__number"><a href="tel:<?php echo $config['style2_phone'];?>" rel="nofollow"><?php echo $config['style2_phone'];?></a></div>
+    <div class="btn-call__number"><a href="tel:<?php echo Option::get('contact_phone');?>" rel="nofollow"><?php echo Option::get('contact_phone');?></a></div>
 </div>
 
 <style>
     :root {
-        --btn-bg-color:<?php echo $config['style2_btn_bg_color'];?>;
-        --btn-border-color:<?php echo $config['style2_btn_border_color'];?>;
-        --btn-txt-color:<?php echo $config['style2_btn_txt_color'];?>;
+        --btn-bg-color:<?php echo $config['btn_bg_color'];?>;
+        --btn-border-color:<?php echo $config['btn_border_color'];?>;
+        --btn-txt-color:<?php echo $config['btn_txt_color'];?>;
     }
     .scb-phone-box .btn-call {
         position: relative;
@@ -238,6 +238,60 @@
             transform: rotateZ(0deg);
             -ms-transform: rotateZ(0deg);
             -webkit-transform: rotateZ(0deg);
+        }
+    }
+
+    :root {
+        --phone-pc-vertical:<?php echo PhoneContact::config('pc-vertical');?>px;
+        --phone-pc-horizontal:<?php echo PhoneContact::config('pc-horizontal');?>px;
+        --phone-mb-vertical:<?php echo PhoneContact::config('mb-vertical');?>px;
+        --phone-mb-horizontal:<?php echo PhoneContact::config('mb-horizontal');?>px;
+        --phone-pc-display:<?php echo (PhoneContact::config('pc-show') == 0) ? 'none' : 'block';?>;
+        --phone-mb-display:<?php echo (PhoneContact::config('mb-show') == 0) ? 'none' : 'block';?>;
+    }
+    .scb-phone-box {
+        position: fixed; display: var(--phone-pc-display); z-index: 9;
+    }
+    @media(min-width: 601px) {
+        .scb-phone-box.social-bottomLeft {
+            left: var(--phone-pc-horizontal);
+            bottom: var(--phone-pc-vertical);
+        }
+
+        .scb-phone-box.social-bottomRight {
+            right: var(--phone-pc-horizontal);
+            bottom: var(--phone-pc-vertical);
+        }
+
+        .scb-phone-box.social-topLeft {
+            left: var(--phone-pc-horizontal);
+            top: var(--phone-pc-vertical);
+        }
+
+        .scb-phone-box.social-topRight {
+            right: var(--phone-pc-horizontal);
+            top: var(--phone-pc-vertical);
+        }
+    }
+    @media(max-width: 600px) {
+        .scb-phone-box {
+            display: var(--phone-mb-display)!important;
+        }
+        .scb-phone-box.social-mb-bottomLeft {
+            left:var(--phone-mb-horizontal)!important;
+            bottom:var(--phone-mb-vertical)!important;
+        }
+        .scb-phone-box.social-mb-bottomRight {
+            right:var(--phone-mb-horizontal)!important;
+            bottom:var(--phone-mb-vertical)!important;
+        }
+        .scb-phone-box.social-mb-topLeft {
+            left:var(--phone-mb-horizontal)!important;
+            top:var(--phone-mb-vertical)!important;
+        }
+        .scb-phone-box.social-mb-topRight {
+            right:var(--phone-mb-horizontal)!important;
+            top:var(--phone-mb-vertical)!important;
         }
     }
 </style>
